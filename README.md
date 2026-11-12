@@ -4,7 +4,7 @@ Site da iniciação científica sobre sífilis congênita em São Paulo (FSL), f
 
 Publicado em https://sifilis-sp-caderno-pesquisa.vercel.app (projeto `sifilis-sp-caderno-pesquisa` na conta Vercel da Marjori). Site estático: `vercel.json` publica a pasta `dist/` sem build.
 
-Até 12/11/2026 o código só existia na Vercel. O repositório foi montado a partir dos arquivos da publicação de 03/11/2026 (conferidos pelo hash), que são o primeiro commit.
+Código em https://github.com/marjoripomarole/sifilis-sp-caderno-pesquisa. Até 12/11/2026 ele só existia na Vercel. O repositório foi montado a partir dos arquivos da publicação de 03/11/2026 (conferidos pelo hash), que são o primeiro commit.
 
 ## Atualização de 12/11/2026
 
