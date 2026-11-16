@@ -1,13 +1,15 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sífilis em São Paulo · Caderno de pesquisa</title><meta name="description" content="Dados públicos, fontes e plano de pesquisa sobre sífilis em São Paulo capital e Estado."><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f223d'/%3E%3Cpath d='M7 23V16h4v7zm7 0V10h4v13zm7 0V6h4v17z' fill='%2334d3b3'/%3E%3C/svg%3E"><link rel="stylesheet" href="styles.css"><script src="app.js" defer></script><script src="esf.js" defer></script></head><body>
+<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sífilis em São Paulo · Caderno de pesquisa</title><meta name="description" content="Dados públicos, mapa interativo 2014–2025, síntese executiva, comparação da capital com a Grande SP e plano de pesquisa sobre sífilis em São Paulo capital e Estado."><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f223d'/%3E%3Cpath d='M7 23V16h4v7zm7 0V10h4v13zm7 0V6h4v17z' fill='%2334d3b3'/%3E%3C/svg%3E"><link rel="stylesheet" href="styles.css"><script src="app.js" defer></script><script src="esf.js" defer></script><script src="mapa.js" defer></script><script src="grandesp.js" defer></script></head><body>
 <a class="skip" href="#main">Ir ao conteúdo</a>
-<aside class="rail"><a class="brand" href="#panorama"><span class="brand-mark" aria-hidden="true">SP</span><span>Sífilis em<br><strong>São Paulo</strong></span></a><p class="rail-label">Caderno de pesquisa</p><nav aria-label="Pauta da reunião"><a class="active" href="#panorama"><span>01</span> Panorama</a><a href="#esf"><span>02</span> ESF por STS</a><a href="#fontes"><span>03</span> Fontes de dados</a></nav><div class="rail-bottom"><span class="pill light">Iniciação científica</span><button id="meeting" class="rail-button">Modo reunião</button></div></aside>
-<main id="main"><header class="topbar"><span id="updated">Fontes verificadas · 24 set 2026</span><div><a id="sheet-link" class="button secondary" hidden target="_blank" rel="noopener">Planilha de dados ↗</a><button id="download" class="button secondary" disabled>Exportar CSV</button><button id="meeting-mobile" class="button secondary mobile-meeting" aria-pressed="false">Modo reunião</button></div></header>
+<aside class="rail"><a class="brand" href="#panorama"><span class="brand-mark" aria-hidden="true">SP</span><span>Sífilis em<br><strong>São Paulo</strong></span></a><p class="rail-label">Caderno de pesquisa</p><nav aria-label="Pauta da reunião"><a class="active" href="#panorama"><span>01</span> Panorama</a><a href="#esf"><span>02</span> ESF por STS</a><a href="#mapa"><span>03</span> Mapa interativo</a><a href="#sintese"><span>04</span> Síntese executiva</a><a href="#grandesp"><span>05</span> Capital × Grande SP</a><a href="#fontes"><span>06</span> Fontes de dados</a></nav><div class="rail-bottom"><span class="pill light">Iniciação científica</span><button id="meeting" class="rail-button">Modo reunião</button></div></aside>
+<main id="main"><header class="topbar"><span id="updated">Fontes verificadas · 12 nov 2026</span><div><a id="sheet-link" class="button secondary" hidden target="_blank" rel="noopener">Planilha de dados ↗</a><button id="download" class="button secondary" disabled>Exportar CSV</button><button id="meeting-mobile" class="button secondary mobile-meeting" aria-pressed="false">Modo reunião</button></div></header>
 <section id="panorama" class="page"><div class="section-head"><div><p class="eyebrow">01 / PANORAMA</p><h1>O que os dados<br>permitem enxergar?</h1><p class="intro">Sífilis congênita, em gestantes e adquirida: séries separadas, com origem e recorte explícitos.</p></div><div class="date-chip">SÃO PAULO<span>Capital & Estado</span></div></div>
+<div class="quick-links-bar"><p><strong>Novidades de 12 nov 2026:</strong> explore o mapa interativo da cidade com linha do tempo (2014–2025), as 482 UBS e seus territórios de abrangência (AAUBS), ou leia a síntese executiva para a reunião do grupo.</p><div class="q-btns"><a class="button btn-sm" href="#mapa">Abrir mapa interativo 2014–2025 →</a><a class="button secondary btn-sm" href="#sintese">Ler síntese executiva →</a></div></div>
 <section class="sinan-panel" aria-labelledby="sinan-heading"><div class="sinan-heading"><div><p class="eyebrow">BASE PRIORITÁRIA DA PESQUISA</p><h2 id="sinan-heading">Microdados SINAN disponíveis</h2><p>Arquivos públicos baixados, com recortes por residência no Estado e na capital. O site apresenta contagens agregadas; os registros individuais estão nos pacotes para análise.</p></div><a class="button" href="https://drive.google.com/drive/folders/1KML7HzE9TbUNnMBWjcpaSKC3DegGtCr1" target="_blank" rel="noopener">Abrir pasta dos microdados ↗</a></div><dl class="sinan-counts"><div><dt>Congênita · 2007–2025</dt><dd>54.526 <span>registros no Estado</span></dd></div><div><dt>Em gestantes · 2007–2025</dt><dd>177.637 <span>registros no Estado</span></dd></div><div><dt>Adquirida · 2010–2025</dt><dd>529.501 <span>registros no Estado</span></dd></div></dl><p class="sinan-total"><strong>761.664 registros no Estado</strong>, dos quais 325.547 são de residentes da capital. São registros, não uma contagem deduplicada de pessoas. A capital está incluída no total estadual.</p><div class="sinan-actions" aria-label="Explorar contagens dos microdados SINAN"><span>Ver no gráfico:</span><button type="button" data-sinan-agravo="congenita" disabled>Congênita</button><button type="button" data-sinan-agravo="gestante" disabled>Em gestantes</button><button type="button" data-sinan-agravo="adquirida" disabled>Adquirida</button></div><p class="sinan-caution"><strong>54 arquivos originais, todos PRELIM.</strong> Inclui CSV de São Paulo e da capital e arquivos DBC originais. Todos os anos estão sujeitos a revisão. O FTP não informa o corte epidemiológico: a data de modificação do arquivo em 2026 não representa esse corte.</p><p class="sinan-caution"><strong>Por que o gráfico para em 2024.</strong> O arquivo de 2025 do DATASUS só traz diagnósticos de janeiro a junho de 2025 (notificações até meados de agosto): na capital, 421 casos de sífilis congênita, contra 730 do ano inteiro no Boletim municipal de 2026. Por isso o gráfico abre no último ano completo. Para ver 2025, escolha 2025 em “Até”; a barra aparece em laranja. Em 12/11/2026 o DATASUS ainda não tinha publicado versão mais nova de 2025 nem arquivo de 2026. Para 2025 completo, use as fontes da SMS-SP no seletor (Boletim 2026, tabelas 5 e 9, e a série atual até 2026).</p></section>
 <div class="metrics" id="metrics"><article><span>Fontes mapeadas</span><strong>58</strong><small>Catálogo de pesquisa</small></article><article><span>Séries carregadas</span><strong>—</strong><small>Aguardando coleta validada</small></article><article><span>Recorte em foco</span><strong>SP</strong><small>Capital e Estado</small></article></div>
 <div class="panel chart-panel" id="series-panel"><div class="panel-title"><div><p class="eyebrow">EXPLORAR A SÉRIE</p><h2 id="chart-title">Séries epidemiológicas</h2></div><span id="data-badge" class="pill amber">Coleta em preparação</span></div><div id="filters" class="filters"><label for="territory">Território<select aria-label="Território" id="territory" disabled><option>Selecione após a coleta</option></select></label><label for="disease">Agravo<select aria-label="Agravo" id="disease" disabled><option>Dados em preparação</option></select></label><label for="indicator">Indicador<select aria-label="Indicador" id="indicator" disabled><option>Dados em preparação</option></select></label><label for="year-start">A partir de<select aria-label="A partir de" id="year-start" disabled><option>—</option></select></label><label for="year-end">Até<select aria-label="Até" id="year-end" disabled><option>—</option></select></label></div><div id="chart" class="chart"><div class="empty"><span class="empty-mark" aria-hidden="true">↗</span><h3>O catálogo já está disponível.</h3><p>As séries aparecerão aqui após a conferência dos arquivos públicos. Nenhum valor estimado ou simulado será incluído.</p><a href="#fontes">Explorar as fontes →</a></div></div><div id="chart-context" class="chart-context">Cada observação terá fonte, data de extração, recorte e situação de atualização.</div><details id="table-details"><summary>Ver valores e proveniência</summary><div class="table-wrap" id="series-table"></div></details></div>
 <div class="note"><strong>Como ler</strong><p>Estado e capital não são grupos independentes: a capital está contida no Estado. Casos, taxas e testagem respondem a perguntas diferentes.</p></div><div class="note"><strong>Versão da coleta · 24/09/2026</strong><p>Este site apresenta uma cópia dos dados conferidos nesta coleta. Alterações feitas na planilha não atualizam o site automaticamente.</p></div></section>
 <section id="esf" class="page" hidden><div class="section-head"><div><p class="eyebrow">02 / ESF POR STS</p><h1>A cobertura de ESF<br>acompanha a sífilis congênita?</h1><p class="intro">Cruzamento por Supervisão Técnica de Saúde: modelo das UBS (lista da SMS de setembro de 2026 e CNES), cobertura estimada de ESF (CNES e Censos 2010 e 2022) e taxa de sífilis congênita e detecção de sífilis em gestante do Boletim de Sífilis 2026 da SMS-SP, de 2015 a 2025.</p></div><div class="date-chip">ATUALIZADO<span>12 nov 2026</span></div></div>
+<div class="quick-links-bar"><p><strong>Exploração espacial e síntese de reunião:</strong> acompanhe a evolução ano a ano no mapa das 26 STS com as 482 UBS e seus territórios de abrangência (AAUBS), ou veja a análise estratificada e os contrastes da Zona Norte.</p><div class="q-btns"><a class="button btn-sm" href="#mapa">Ver no mapa interativo →</a><a class="button secondary btn-sm" href="#sintese">Síntese executiva & Zona Norte →</a></div></div>
 <div class="metrics esf-metrics" id="esf-metrics"><article><span>Mapeamento</span><strong>—</strong><small>Carregando os dados</small></article></div>
 <div class="note" id="esf-achado"><strong>Achado</strong><p>Carregando os dados do mapeamento…</p></div>
 <div class="panel prose esf-spearman" id="esf-spearman"><p class="eyebrow">PARA QUEM NÃO É DA ESTATÍSTICA</p><h2>O que é o ρ de Spearman e o que ele mostra aqui</h2>
@@ -34,7 +36,350 @@
 <div class="panel"><div class="panel-title"><div><p class="eyebrow">TODAS AS STS</p><h2>Taxa, gestação, cobertura e UBS por modelo</h2></div></div><p class="esf-sub">Clique no título de uma coluna para ordenar. Taxas e detecção em gestante por 1.000 nascidos vivos; SC por 100 gestantes é casos congênitos ÷ casos em gestante; cobertura estimada de ESF em dezembro; UBS por modelo em setembro de 2026. Zona Norte em destaque.</p><div class="table-wrap esf-tabela" id="esf-tabela"></div></div>
 <div class="panel"><div class="panel-title"><div><p class="eyebrow">UBS DE CADA STS</p><h2>Modelo de atenção em setembro de 2026</h2></div></div><div class="esf-escolha"><label for="esf-sts">STS<select id="esf-sts" aria-label="STS"></select></label></div><p class="esf-sub" id="esf-ubs-resumo"></p><div class="table-wrap esf-tabela" id="esf-ubs"></div></div>
 <div class="panel prose"><h2>Como os números foram feitos</h2><ul><li><strong>Modelo da UBS:</strong> só ESF tem equipes de Saúde da Família e nenhuma eAP; mista tem as duas; tradicional não tem eSF. A eAP registra o componente tradicional e só aparece no CNES a partir de 2022.</li><li><strong>STS de cada UBS:</strong> lista da SMS de setembro de 2026, que já segue o Decreto 64.999/2026 (Sé e Santa Cecília em uma STS só). A lista foi pareada ao CNES por CEP e nome.</li><li><strong>Cobertura estimada de ESF:</strong> equipes eSF ativas no CNES × 3.450 pessoas ÷ população, limitada a 100%. A população é a dos distritos nos Censos 2010 e 2022, somada pela subprefeitura de cada um; entre os Censos foi interpolada, e depois de 2022 ficou a do Censo 2022.</li><li><strong>Taxa de sífilis congênita:</strong> valores publicados por STS na tabela 9 do Boletim de Sífilis 2026 da SMS-SP, de 2015 a 2025, já na divisão de 2026. O ano de 2014 e a taxa de 2014–16 vêm do Boletim de 2025, com Sé e Santa Cecília somadas. Nos períodos de três anos, os casos somados foram divididos pelos nascidos vivos somados.</li><li><strong>Sífilis em gestante:</strong> casos e taxa de detecção por STS na tabela 5 do mesmo boletim. Os nascidos vivos saem de casos em gestante ÷ taxa de detecção. A taxa municipal de sífilis congênita de 2020 saiu como 0,0 na tabela 9 e foi recalculada (7,2).</li><li><strong>Efeitos fixos:</strong> regressão de cada indicador anual na cobertura de ESF de dezembro do mesmo ano, com efeitos fixos de STS e de ano, nas 26 STS de 2015 a 2025.</li><li><strong>Limites:</strong> comparação entre territórios. A ESF foi levada primeiro às áreas mais vulneráveis, onde há mais sífilis; mais ESF também pode significar mais testagem e notificação; a taxa segue o endereço da mãe, não o local do pré-natal; 2025 ainda é preliminar, e a definição de caso mudou em 2017.</li></ul></div></section>
-<section id="fontes" class="page" hidden><div class="section-head"><div><p class="eyebrow">03 / FONTES DE DADOS</p><h1>Um mapa para<br>construir a pesquisa.</h1><p class="intro">Fontes públicas, acessos sob solicitação e parcerias possíveis. Mapeado não significa baixado.</p></div></div><div class="catalog-controls"><label class="search" for="search">Buscar fonte, tema ou instituição<input type="search" aria-label="Buscar fonte, tema ou instituição" id="search" placeholder="Ex.: SINAN, raça, laboratório…"></label><label for="group">Grupo<select aria-label="Grupo" id="group"><option value="">Todos os grupos</option></select></label><label for="status">Situação<select aria-label="Situação" id="status"><option value="">Todas</option><option value="real">Dados incorporados</option><option value="planned">Ainda no plano</option></select></label></div><p class="result-count" id="result-count"></p><div id="catalog" class="catalog"></div><div class="panel prose" id="inconsistencias-boletim-2026"><p class="eyebrow">CONFERÊNCIA DE 12 NOV 2026</p><h2>Inconsistências do Boletim de Sífilis 2026 da SMS-SP</h2><p>O boletim municipal de outubro de 2026 foi conferido por dentro e contra a série mensal da SMS-SP, o boletim municipal de 2025, os microdados do SINAN e o boletim federal de outubro de 2026. As tabelas 5 e 9, usadas na tela “ESF por STS”, são consistentes. Os problemas estão em pontos isolados.</p>
+<section id="mapa" class="page" hidden>
+<div class="section-head">
+  <div>
+    <p class="eyebrow">03 / MAPA INTERATIVO · 2014 A 2025</p>
+    <h1>Sífilis, cobertura de ESF e<br>territórios das UBS no tempo</h1>
+    <p class="intro">Malha oficial das 26 Supervisões Técnicas de Saúde (Decreto 64.999/2026), das 485 Áreas de Abrangência das UBS (AAUBS/CEInfo, abr/2026) e das 482 UBS classificadas por modelo de atenção (ESF, Mista e Tradicional, set/2026), cruzadas com a série anual 2014–2025 do Boletim Epidemiológico de Sífilis 2026 da SMS-SP.</p>
+  </div>
+  <div class="date-chip">MALHAS SMS-SP<span>2014–2025 · 482 UBS</span></div>
+</div>
+
+<div class="metrics esf-metrics" id="mapa-metrics">
+  <article><span>Sífilis congênita</span><strong>—</strong><small>Carregando mapa…</small></article>
+  <article><span>Detecção em gestante</span><strong>—</strong><small>Carregando…</small></article>
+  <article><span>Cobertura de ESF</span><strong>—</strong><small>Carregando…</small></article>
+  <article><span>Correlação entre as 26 STS</span><strong>—</strong><small>Carregando…</small></article>
+</div>
+
+<div class="mapa-slider-panel">
+  <div class="mapa-slider-top">
+    <div class="mapa-ano-badge">
+      <span class="eyebrow" style="margin:0">ANO EM EXIBIÇÃO</span>
+      <strong id="mapa-ano-label">2025</strong>
+      <span>arraste o controle ou anime a evolução anual</span>
+    </div>
+    <div class="mapa-slider-controls">
+      <button type="button" class="button btn-sm" id="mapa-play" aria-pressed="false">▶ Animar série</button>
+      <input type="range" id="mapa-ano-slider" min="2014" max="2025" step="1" value="2025" aria-label="Selecionar ano de 2014 a 2025">
+    </div>
+  </div>
+  <div class="mapa-anos-pills" id="mapa-anos-pills" role="group" aria-label="Escolha rápida de ano"></div>
+  <div id="mapa-aviso-ano" class="notice" hidden></div>
+
+  <div class="mapa-filtros-grid">
+    <label for="mapa-indicador">Indicador nas STS (cor do mapa)
+      <select id="mapa-indicador" aria-label="Indicador nas STS">
+        <option value="taxa_sc">Taxa de sífilis congênita (por 1.000 NV)</option>
+        <option value="deteccao_gestante">Detecção de sífilis em gestante (por 1.000 NV)</option>
+        <option value="sc_por_100_gestantes">Casos congênitos por 100 gestantes (%)</option>
+        <option value="cobertura_esf">Cobertura estimada de ESF em dezembro (%)</option>
+      </select>
+    </label>
+    <label for="mapa-regiao">Recorte regional / Destaque
+      <select id="mapa-regiao" aria-label="Recorte regional">
+        <option value="todas">Município inteiro (26 STS)</option>
+        <option value="zn_trad">Zona Norte tradicional (6 STS)</option>
+        <option value="zn_crs">CRS Norte 2026 (6 STS + Sé/Sta Cecília)</option>
+        <option value="Sul">CRS Sul (5 STS)</option>
+        <option value="Leste">CRS Leste (7 STS)</option>
+        <option value="Sudeste">CRS Sudeste (5 STS)</option>
+        <option value="Oeste">CRS Oeste (2 STS)</option>
+      </select>
+    </label>
+    <label for="mapa-sel-sts">Inspecionar STS específica
+      <select id="mapa-sel-sts" aria-label="Inspecionar STS específica">
+        <option value="">Todas as 26 STS (visão municipal)</option>
+      </select>
+    </label>
+    <label for="mapa-modelo-ubs">Filtrar pontos de UBS por modelo
+      <select id="mapa-modelo-ubs" aria-label="Filtrar pontos de UBS por modelo">
+        <option value="todos">Todas as UBS (482)</option>
+        <option value="ESF">Só ESF (225)</option>
+        <option value="Mista">Mistas — eSF + eAP (81)</option>
+        <option value="Tradicional">Tradicionais — sem eSF (176)</option>
+      </select>
+    </label>
+    <label for="mapa-busca-ubs">Buscar UBS por nome, CNES ou endereço
+      <input type="search" id="mapa-busca-ubs" placeholder="Ex.: Joana Darc, Brasilândia…">
+    </label>
+  </div>
+
+  <div class="mapa-camadas-bar">
+    <strong>Camadas do mapa:</strong>
+    <label><input type="checkbox" id="mapa-chk-ubs" checked> Pontos das 482 UBS (por modelo)</label>
+    <label><input type="checkbox" id="mapa-chk-aaubs"> Divisas do território de cada UBS (485 AAUBS)</label>
+    <label><input type="checkbox" id="mapa-chk-cor-aaubs"> Colorir territórios das UBS pelo modelo de atenção</label>
+    <label><input type="checkbox" id="mapa-chk-rotulos" checked> Nomes e valores das STS no mapa</label>
+  </div>
+</div>
+
+<div class="mapa-workspace">
+  <div class="mapa-canvas-card">
+    <div class="mapa-toolbar">
+      <span class="esf-sub" style="margin:0">Clique em uma <strong>STS</strong> ou em um ponto de <strong>UBS</strong> para ver a série 2014–2025 e o território de abrangência da UBS. Arraste para mover.</span>
+      <div class="mapa-zoom-btns">
+        <button type="button" id="mapa-zoom-in" title="Aproximar mapa">＋ Zoom</button>
+        <button type="button" id="mapa-zoom-out" title="Afastar mapa">－ Zoom</button>
+        <button type="button" id="mapa-zoom-zn" title="Enquadrar Zona Norte">Focar Zona Norte</button>
+        <button type="button" id="mapa-zoom-reset" title="Voltar à visão do município inteiro">Município inteiro</button>
+      </div>
+    </div>
+    <div class="mapa-svg-wrap">
+      <svg id="mapa-svg" viewBox="0 0 780 960" role="img" aria-label="Mapa interativo de sífilis e cobertura de ESF por STS e UBS no município de São Paulo">
+        <g id="mapa-camada-sts"></g>
+        <g id="mapa-camada-aaubs"></g>
+        <g id="mapa-camada-outline"></g>
+        <g id="mapa-camada-ubs"></g>
+        <g id="mapa-camada-rotulos"></g>
+      </svg>
+    </div>
+    <div id="mapa-legenda" class="mapa-legenda"></div>
+  </div>
+
+  <aside class="mapa-inspetor" id="mapa-inspetor" aria-live="polite">
+    <p class="esf-sub">Carregando dados territoriais…</p>
+  </aside>
+</div>
+
+<div class="panel prose">
+  <p class="eyebrow">FONTES CARTOGRÁFICAS E NOTAS TÉCNICAS</p>
+  <h2>De onde vêm as malhas e as coordenadas deste mapa</h2>
+  <ul>
+    <li><strong>Malha das 26 Supervisões Técnicas de Saúde (STS) e 5 CRS:</strong> arquivos digitais oficiais da Coordenação de Epidemiologia e Informação (CEInfo / SMS-SP), revisão de abril de 2026 em projeção SIRGAS 2000, já com a incorporação da antiga CRS Centro à CRS Norte como STS <em>Sé/Santa Cecília</em> (Decreto Municipal nº 64.999/2026).</li>
+    <li><strong>Territórios de abrangência de cada UBS (AAUBS):</strong> malha oficial de 485 polígonos de Áreas de Abrangência das UBS no Município de São Paulo (CEInfo/SMS-SP, abril de 2026). Das 482 UBS ativas na relação da SMS de setembro de 2026, <strong>478 têm correspondência exata por código CNES</strong> na malha de AAUBS; as 4 restantes foram inauguradas entre abril e setembro de 2026 (<em>UBS Jardim Joana D'Arc</em> em Santana/Jaçanã, <em>UBS Jardim Rosinha Residencial das Orquídeas</em> em Perus, <em>UBS Helena Miguel Rezek</em> no Butantã e <em>UBS Cidade Dutra — Benedita de Fátima da Silva</em> em Capela do Socorro). Os outros 7 polígonos da malha correspondem a Centros de Saúde Escola (USP/Santa Casa), Ambulatório da Freguesia do Ó e 3 UBS Indígenas (Jaraguá, Krukutu e Vera Poty).</li>
+    <li><strong>Coordenadas geográficas das UBS:</strong> pareadas prioritariamente pelo cadastro georreferenciado oficial de estabelecimentos de referência das AAUBS da CEInfo/SMS-SP (478 UBS) e complementadas pelo CNES/DATASUS (4 UBS recém-inauguradas, com correção de um dígito na latitude da <em>UBS Jardim Rosinha Residencial das Orquídeas</em>, CNES 8538719, de −24,4354 para −23,4354).</li>
+  </ul>
+</div>
+</section>
+
+<section id="sintese" class="page" hidden>
+<div class="section-head">
+  <div>
+    <p class="eyebrow">04 / SÍNTESE EXECUTIVA · REUNIÃO DO GRUPO</p>
+    <h1>Dados até 2025, aprofundamento na<br>Zona Norte e cascata do SINAN</h1>
+    <p class="intro">Consolidação executiva de todas as frentes concluídas até 12 de novembro de 2026: atualização do painel ecológico com o Boletim de Sífilis 2026 (série 2015–2025 nas 26 STS), análise passo a passo da Zona Norte, testes de sensibilidade e correlações parciais, e achados dos microdados individuais do SINAN (325.547 registros na capital).</p>
+  </div>
+  <div class="date-chip">PAUTA DE REUNIÃO<span>12 nov 2026</span></div>
+</div>
+
+<div class="sintese-cards-3">
+  <article class="sintese-card">
+    <p class="eyebrow">1. PARADOXO ECOLÓGICO (2015–2025)</p>
+    <h2>Mais ESF amplia a detecção na gestação e reduz a razão SC/gestante, mas não baixa a taxa bruta de SC sozinha</h2>
+    <p>Nas 26 STS em 2023–2025, a cobertura de ESF correlaciona-se positivamente com a <strong>detecção de sífilis em gestante</strong> (ρ = +0,40; <em>p</em> = 0,041) e negativamente com a <strong>proporção de casos congênitos por 100 gestantes</strong> (ρ = −0,48; <em>p</em> = 0,014), mas tem correlação nula com a <strong>taxa de sífilis congênita por 1.000 NV</strong> (ρ = +0,12; <em>p</em> = 0,554). No painel com efeitos fixos (2015–2025), cada +10 p.p. de ESF eleva a detecção materna em <strong>+4,48/1.000 NV</strong>, sem reduzir a taxa de SC (+0,26/1.000 NV; IC 95% −0,55 a +1,08).</p>
+  </article>
+  <article class="sintese-card amber">
+    <p class="eyebrow">2. PERFIL REPRODUTIVO E TERRITÓRIO</p>
+    <h2>Controlar pela natalidade ou pela detecção materna revela onde está o gargalo</h2>
+    <p>A expansão da ESF foi priorizada em territórios periféricos mais vulneráveis e de maior fecundidade. Quando controlamos pela <strong>taxa de detecção em gestante (TDSG)</strong> nas 26 STS, a correlação parcial entre cobertura de ESF e taxa de sífilis congênita passa a ser <strong>negativa (ρ parcial = −0,35; <em>p</em> = 0,084)</strong>: para um mesmo patamar de carga/detecção materna, territórios com maior cobertura de ESF tendem a ter menor incidência de sífilis congênita.</p>
+  </article>
+  <article class="sintese-card navy">
+    <p class="eyebrow">3. CASCATA INDIVIDUAL NO SINAN</p>
+    <h2>O gargalo não é o acesso ao pré-natal (83,2%), mas a conclusão adequada do tratamento</h2>
+    <p>Nos microdados individuais do SINAN da capital (10.311 casos de SC e 56.192 gestantes em 2015–2024), <strong>83,2% das mães de crianças com sífilis congênita fizeram pré-natal</strong> e <strong>58,6% tiveram diagnóstico durante o pré-natal</strong>, mas o tratamento materno foi <strong>inadequado em 55,6%</strong> ou <strong>não realizado em 23,0%</strong> (só 9,8% adequado). Além disso, <strong>17,1% dos casos de SC</strong> tiveram desfecho grave (aborto, natimorto ou óbito).</p>
+  </article>
+</div>
+
+<div class="panel">
+  <div class="panel-title">
+    <div>
+      <p class="eyebrow">APROFUNDAMENTO REGIONAL · CRS NORTE (2015–2025)</p>
+      <h2>Evolução trienal das STS da Zona Norte e de Sé/Santa Cecília</h2>
+    </div>
+    <span class="pill">Boletim 2026 + CNES</span>
+  </div>
+  <p class="esf-sub">Em 2025, as 6 STS tradicionais da Zona Norte somaram <strong>148 casos de sífilis congênita</strong> (taxa de <strong>6,6 por 1.000 NV</strong>, acima da média municipal de 5,9) e <strong>1.839 casos em gestantes</strong> (detecção de 82,2 por 1.000 NV), com cobertura de ESF de <strong>48,2%</strong>. Incluindo <em>Sé/Santa Cecília</em> (incorporada à CRS Norte pelo Decreto 64.999/2026), são 184 casos de SC (6,9/1.000 NV). Embora a taxa agregada da Zona Norte tenha caído 17,6% entre 2015–17 (8,3) e 2023–25 (6,8), as 6 STS dividiram-se em trajetórias opostas:</p>
+  <div class="table-wrap esf-tabela">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">STS (Zona Norte / CRS Norte)</th>
+          <th scope="col" class="num">TISC 2015–17</th>
+          <th scope="col" class="num">TISC 2018–20</th>
+          <th scope="col" class="num">TISC 2021–22</th>
+          <th scope="col" class="num">TISC 2023–25</th>
+          <th scope="col" class="num">Δ TISC (23–25 vs 15–17)</th>
+          <th scope="col" class="num">Detecção gest. (15–17 → 23–25)</th>
+          <th scope="col" class="num">SC/100 gest. (2023–25)</th>
+          <th scope="col" class="num">Cobertura ESF (2015 → 2025)</th>
+          <th scope="col" class="num">UBS set/26 (ESF/Mista/Trad)</th>
+        </tr>
+      </thead>
+      <tbody id="sintese-zn-tbody">
+        <tr><td colspan="10">Carregando tabela da Zona Norte…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="method-grid" style="margin-top:20px">
+    <div class="panel" style="background:#f8fbfa">
+      <span class="step-number">PAR CONTRASTANTE 1 · EXPANSÃO SEMELHANTE, DESFECHOS OPOSTOS</span>
+      <h3>Freguesia/Brasilândia × Casa Verde/Cachoeirinha</h3>
+      <p>Ambas partiram do <strong>mesmo patamar de sífilis congênita em 2015–17</strong> (8,6 e 8,5 por 1.000 NV) e tiveram <strong>expansão quase idêntica de cobertura de ESF</strong> entre 2015 e 2025 (+20,4 p.p. e +19,2 p.p.). Em <strong>Freguesia/Brasilândia</strong> (cobertura de 68,8%, com 12 UBS só ESF e 5 mistas de 21), a taxa de SC caiu <strong>28,3%</strong> (para 6,2/1.000 NV em 2023–25) e a razão SC/gestante desceu a <strong>7,5%</strong> (1º lugar da ZN). Já em <strong>Casa Verde/Cachoeirinha</strong> (onde a cobertura ainda é de 36,9% e 8 das 15 UBS seguem tradicionais), a taxa de SC subiu para <strong>9,4/1.000 NV</strong> (+10,6%) e a razão SC/gestante ficou em <strong>11,2%</strong> (a pior das 6 STS da ZN).</p>
+    </div>
+    <div class="panel" style="background:#fdf9f5">
+      <span class="step-number">PAR CONTRASTANTE 2 · ESTAGNAÇÃO VS. EXPANSÃO CONTÍNUA</span>
+      <h3>Vila Maria/Vila Guilherme × Santana/Jaçanã</h3>
+      <p><strong>Vila Maria/Vila Guilherme</strong> já tinha cobertura de ESF de 50,3% em 2015, mas quase não expandiu na década (+3,8 p.p. até 2025, com 7 UBS tradicionais e 2 mistas); sua taxa de sífilis congênita permaneceu estagnada em patamar alto (<strong>8,5/1.000 NV</strong> em 2023–25, chegando a 9,4 em 2025). Em contrapartida, <strong>Santana/Jaçanã</strong> dobrou sua cobertura de ESF (de 18,4% para 36,6%, +18,2 p.p.) e reduziu a taxa de sífilis congênita em <strong>29,4%</strong> (de 7,9 para <strong>5,6/1.000 NV</strong>, abaixo da média municipal). Já <strong>Pirituba</strong> (6,1) e <strong>Perus</strong> (6,5, com 81,9% de ESF) consolidaram quedas de 23% a 33% na década.</p>
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-title">
+    <div>
+      <p class="eyebrow">ESTRATIFICAÇÃO E TESTES DE SENSIBILIDADE (2015–2025)</p>
+      <h2>Correlações de Spearman brutas e parciais: 26 STS vs. 23 STS e controles</h2>
+    </div>
+    <span class="pill amber">Inferência robusta</span>
+  </div>
+  <p class="esf-sub">Testamos se a ausência de correlação negativa bruta entre ESF e sífilis congênita (ρ = +0,12) se devia (a) às 3 STS de perfil central/oeste e baixa natalidade (<em>Lapa/Pinheiros</em>, <em>Butantã</em> e <em>Sé/Santa Cecília</em>), (b) a confundimento demográfico pela taxa bruta de natalidade (NV por 1.000 hab.), ou (c) ao volume de detecção materna (TDSG):</p>
+  <div class="table-wrap esf-tabela">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Bloco de análise</th>
+          <th scope="col">Recorte territorial</th>
+          <th scope="col">Especificação / Controle</th>
+          <th scope="col" class="num">Correlação (ρ)</th>
+          <th scope="col" class="num">IC 95%</th>
+          <th scope="col" class="num">Valor-p</th>
+          <th scope="col">Leitura estatística</th>
+        </tr>
+      </thead>
+      <tbody id="sintese-corr-tbody">
+        <tr><td colspan="7">Carregando correlações estratificadas…</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="chart-context">
+    <strong>Três conclusões analíticas:</strong> (1) Retirar Lapa/Pinheiros, Butantã e Sé/Santa Cecília (ficando com 23 STS) ou controlar pela taxa de natalidade reduz a correlação positiva entre ESF e detecção em gestante (de +0,40 para +0,16), porque aquelas STS têm baixa cobertura de ESF, baixa natalidade e menor incidência em gestantes usuárias do SUS, mas a relação inversa entre ESF e <strong>SC por 100 gestantes</strong> permanece negativa (ρ = −0,39 a −0,48). (2) Controlando pela <strong>taxa de detecção em gestante (TDSG)</strong> nas 26 STS, a correlação parcial entre cobertura de ESF e taxa de sífilis congênita inverte de +0,12 para <strong>−0,35 (<em>p</em> = 0,084)</strong>. (3) Na correlação das variações na década (Δ 2023–25 vs. 2015–17), onde a cobertura de ESF mais cresceu, mais subiu a detecção em gestantes (ρ = +0,39; <em>p</em> = 0,049).
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-title">
+    <div>
+      <p class="eyebrow">PAINEL COM EFEITOS FIXOS DE STS E DE ANO (TWFE)</p>
+      <h2>Sensibilidade temporal: efeito contemporâneo, defasagem de 1 ano (lag t−1) e pós-2017</h2>
+    </div>
+    <span class="pill">Erros-padrão agrupados por STS</span>
+  </div>
+  <p class="esf-sub">Como a sífilis congênita decorre de gestações iniciadas até 9 meses antes, testamos também a cobertura de ESF defasada em 1 ano (<em>t − 1</em>), o período pós-mudança na definição de caso (2018–2025) e o subconjunto de 23 STS:</p>
+  <div class="table-wrap esf-tabela">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Recorte do painel</th>
+          <th scope="col">Especificação do modelo (efeito de +10 p.p. de cobertura de ESF)</th>
+          <th scope="col" class="num">Efeito estimado</th>
+          <th scope="col" class="num">IC 95% (cluster STS)</th>
+          <th scope="col" class="num">Valor-p</th>
+          <th scope="col">Conclusão</th>
+        </tr>
+      </thead>
+      <tbody id="sintese-twfe-tbody">
+        <tr><td colspan="6">Carregando modelos de painel…</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-title">
+    <div>
+      <p class="eyebrow">MICRODADOS INDIVIDUAIS DO SINAN NA CAPITAL (2015–2024)</p>
+      <h2>A cascata de perda de oportunidade no pré-natal e a gravidade dos desfechos</h2>
+    </div>
+    <span class="pill">56.192 gestantes · 10.311 casos de SC</span>
+  </div>
+  <p class="esf-sub">A análise individual dos microdados do SINAN de residentes no município de São Paulo (2015–2024, último ano completo no FTP do DATASUS) explica por que o aumento da cobertura e da detecção não se traduziu automaticamente na queda proporcional da sífilis congênita:</p>
+  <div class="cascata-grid">
+    <div class="cascata-step">
+      <span>1. Acesso ao pré-natal</span>
+      <strong>83,2%</strong>
+      <p>das mães de crianças notificadas com sífilis congênita realizaram pré-natal (apenas 13,7% não fizeram pré-natal).</p>
+    </div>
+    <div class="cascata-step">
+      <span>2. Momento do diagnóstico</span>
+      <strong>58,6%</strong>
+      <p>tiveram diagnóstico materno durante o pré-natal; porém <strong>31,1%</strong> só foram diagnosticadas no parto/curetagem e 6,0% após o parto.</p>
+    </div>
+    <div class="cascata-step">
+      <span>3. Tratamento materno (SC)</span>
+      <strong>9,8%</strong>
+      <p>tiveram esquema materno classificado como adequado nas fichas de SC: <strong>55,6% foi inadequado</strong> e <strong>23,0% não realizado</strong>.</p>
+    </div>
+    <div class="cascata-step">
+      <span>4. Desfechos graves (SC)</span>
+      <strong>17,1%</strong>
+      <p>resultaram em aborto (9,7% · 998), natimorto (5,3% · 549) ou óbito por SC (2,1% · 221), subindo de 15,8% (2015) para <strong>18,2% (2024)</strong>.</p>
+    </div>
+  </div>
+  <div class="prose" style="margin-top:10px;padding:0;max-width:none">
+    <ul>
+      <li><strong>Melhora da captação precoce nas fichas de gestantes (56.192 casos):</strong> o diagnóstico no 1º trimestre subiu de <strong>34,8% (2015) para 52,0% (2024)</strong>, e a prescrição de penicilina benzatina manteve-se entre <strong>89% e 92%</strong>. Ou seja, a rede básica diagnostica mais cedo e prescreve penicilina, mas persistem falhas na completude das doses, no intervalo entre aplicações, no início até 30 dias antes do parto e no monitoramento sorológico (VDRL mensal).</li>
+      <li><strong>Desigualdade racial persistente:</strong> em 2024, mulheres pretas e pardas concentraram <strong>62,5%</strong> das notificações de sífilis em gestante e <strong>63,4%</strong> dos casos de sífilis congênita na capital (com apenas 2,3% de preenchimento ignorado em gestantes).</li>
+      <li><strong>Cautelas obrigatórias no uso do SINAN:</strong> (1) a variável <code>TRATPARC</code> (tratamento do parceiro) nas fichas de gestante tem <strong>43% a 45% de valores em branco/ignorados</strong> após 2018 — reportar sempre sobre o total de notificações; (2) em outubro de 2017 a Nota Informativa MS nº 2-SEI/2017 deixou de exigir o tratamento do parceiro para classificar o tratamento materno como adequado; (3) os arquivos públicos do SINAN de 2025 no FTP do DATASUS estão truncados em junho de 2025.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="panel">
+  <p class="eyebrow">DELIBERAÇÕES PARA A PRÓXIMA REUNIÃO</p>
+  <h2>Quatro decisões recomendadas para o grupo de pesquisa</h2>
+  <div class="agenda" style="margin:10px 0 0">
+    <article>
+      <span>01</span>
+      <div>
+        <h2>Fechar o recorte do primeiro produto científico (resumo de congresso / artigo curto)</h2>
+        <p>Integrar os dois níveis já prontos e validados: (a) a análise ecológica longitudinal das <strong>26 STS de 2015 a 2025</strong> (mostrando que a ESF amplia a detecção materna em +4,48/1.000 NV a cada +10 p.p., mas não reduz isoladamente a TISC sem controle pela carga materna) e (b) a <strong>cascata de cuidado nos microdados do SINAN (2015–2024)</strong> que explica o fenômeno pela perda de oportunidade no tratamento materno e na gravidade dos desfechos (17,1%).</p>
+      </div>
+      <b>Decisão de escopo<br>Imediata</b>
+    </article>
+    <article>
+      <span>02</span>
+      <div>
+        <h2>Descer da escala de STS (26 unidades) para a escala de UBS / Distrito no SINAN</h2>
+        <p>Cruzar os microdados do SINAN da capital pelos campos intramunicipais disponíveis no DBC/CSV (<code>ID_UNIDADE</code> / CNES notificante, <code>ID_DISTRIT</code> e <code>ID_BAIRRO</code>) com a nossa base de <strong>482 UBS classificadas por modelo (ESF, Mista, Tradicional)</strong> e suas <strong>485 Áreas de Abrangência (AAUBS)</strong>. Isso aumentará o poder estatístico de <em>n</em> = 26 STS para centenas de unidades/territórios.</p>
+      </div>
+      <b>Próximo passo analítico<br>Alta prioridade</b>
+    </article>
+    <article>
+      <span>03</span>
+      <div>
+        <h2>Incluir controle socioeconômico e de vulnerabilidade territorial</h2>
+        <p>Incorporar um indicador de vulnerabilidade por STS/Distrito (IPVS/Seade, renda média do Censo 2022 ou proporção de gestantes adolescentes e pretas/pardas no SINAN/SINASC) nos modelos de regressão, separando formalmente o efeito protetor da ESF do viés de alocação prioritária em áreas mais vulneráveis.</p>
+      </div>
+      <b>Modelagem multivariada<br>Média prioridade</b>
+    </article>
+    <article>
+      <span>04</span>
+      <div>
+        <h2>Estudo de caso comparativo na Zona Norte</h2>
+        <p>Destacar na discussão do trabalho o contraste empírico entre <strong>Freguesia/Brasilândia</strong> (68,8% de ESF; queda de 28,3% na sífilis congênita e razão SC/gestante de 7,5%) e <strong>Casa Verde/Cachoeirinha / Vila Maria/Vila Guilherme</strong> (taxas de 9,4 e 8,5 por 1.000 NV em 2023–25), investigando diferenças de organização da rede local de pré-natal.</p>
+      </div>
+      <b>Discussão territorial<br>Foco Zona Norte</b>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="grandesp" class="page" hidden><div class="section-head"><div><p class="eyebrow">05 / CAPITAL × GRANDE SP</p><h1>A capital e os vizinhos<br>partiram do mesmo ponto.</h1><p class="intro">São Paulo comparada com os outros 38 municípios da Região Metropolitana e com o restante do estado: sífilis congênita e sífilis em gestante de 2013 a 2023 (painel do Ministério da Saúde) e cobertura estimada de ESF de 2014 a 2026 (equipes do CNES e Censos do IBGE).</p></div><div class="date-chip">REUNIÃO DO GRUPO<span>16 nov 2026</span></div></div>
+<div class="metrics esf-metrics" id="gsp-metrics"><article><span>Capital × vizinhos</span><strong>—</strong><small>Carregando os dados</small></article></div>
+<div class="note" id="gsp-achado"><strong>Leitura</strong><p>Carregando os dados…</p></div>
+<div class="esf-grid"><div class="panel chart-panel"><p class="eyebrow">SÍFILIS CONGÊNITA</p><h2>As taxas se separam depois de 2015</h2><p class="esf-sub">Casos em menores de 1 ano por 1.000 nascidos vivos, de 2013 a 2023.</p><div id="gsp-sc" class="chart"></div></div><div class="panel chart-panel"><p class="eyebrow">ESTRATÉGIA SAÚDE DA FAMÍLIA</p><h2>A cobertura dos vizinhos cai até 2019</h2><p class="esf-sub">Equipes eSF ativas × 3.450 pessoas ÷ população, em dezembro de 2014 a 2025 e em setembro de 2026.</p><div id="gsp-cob" class="chart"></div></div></div>
+<div class="chart-context gsp-contexto"><strong>Cuidado com 2020.</strong> <span id="gsp-salto"></span> Parte da subida da cobertura em 2020 pode ser recadastramento de equipes que já existiam, e não equipe nova. De 2019 a 2023 os casos ainda são preliminares na fonte.</div>
+<div class="panel"><div class="panel-title"><div><p class="eyebrow">DENTRO DOS VIZINHOS</p><h2>A queda de cobertura vem de cinco municípios</h2></div><span class="pill amber">Pergunta em aberto</span></div><p class="esf-sub" id="gsp-sub-texto"></p><div class="esf-grid gsp-par"><div class="chart-panel"><h3>Cobertura estimada de ESF</h3><div id="gsp-sub-cob" class="chart"></div></div><div class="chart-panel"><h3>Sífilis congênita por 1.000 nascidos vivos</h3><div id="gsp-sub-sc" class="chart"></div></div></div><div class="series-notes esf-legenda" id="gsp-sub-legenda"></div><div class="chart-context" id="gsp-sub-leitura"></div></div>
+<div class="esf-grid"><div class="panel chart-panel"><p class="eyebrow">SÍFILIS EM GESTANTE</p><h2>A capital notifica mais gestantes</h2><p class="esf-sub">Casos em gestante por 1.000 nascidos vivos, de 2013 a 2023.</p><div id="gsp-det" class="chart"></div></div><div class="panel"><p class="eyebrow">O QUE DIFERE E O QUE NÃO DIFERE</p><h2>Os três grupos em 2023</h2><div class="table-wrap esf-tabela" id="gsp-cascata"></div><div class="chart-context">Entre os casos congênitos, a proporção de mães com pré-natal, com diagnóstico no pré-natal e sem tratamento é parecida nos três grupos. A diferença aparece antes: a capital notifica mais gestantes com sífilis e mais cedo na gestação. Gestantes e casos congênitos são notificações separadas, sem vínculo entre mãe e criança.</div></div></div>
+<div class="panel chart-panel"><div class="panel-title"><div><p class="eyebrow">COBERTURA × INDICADOR</p><h2>Cada ponto é um município</h2></div><span class="pill amber">2021–23</span></div><div class="gsp-controles" id="gsp-controles"><div role="group" aria-label="Municípios no gráfico"><span>Municípios</span><button type="button" data-tipo="conjunto" data-valor="gsp" aria-pressed="true">Grande SP</button><button type="button" data-tipo="conjunto" data-valor="sp" aria-pressed="false">Estado de SP</button></div><div role="group" aria-label="Indicador no eixo vertical"><span>Eixo vertical</span><button type="button" data-tipo="indicador" data-valor="sc" aria-pressed="true">Sífilis congênita</button><button type="button" data-tipo="indicador" data-valor="det" aria-pressed="false">Detecção em gestante</button><button type="button" data-tipo="indicador" data-valor="raz" aria-pressed="false">Casos por 100 gestantes</button></div></div><div id="gsp-dispersao" class="chart"></div><div class="series-notes esf-legenda"><span><i style="background:#10253e"></i>São Paulo (capital)</span><span><i style="background:#bd6024"></i>Carapicuíba e Osasco</span><span><i style="background:#5fb3a5"></i>Demais municípios da Grande SP</span><span><i style="background:#c3cfd9"></i>Interior e litoral</span></div><div class="chart-context" id="gsp-rho"></div><div class="chart-context">Só entram municípios com pelo menos 1.000 nascidos vivos por ano. Barueri, Santana de Parnaíba e Cotia, com pouca ESF, têm taxas baixas de sífilis congênita; Franco da Rocha e Mauá, com muita, ficam acima da capital. O perfil socioeconômico do município pesa mais que o modelo de atenção, como Lapa/Pinheiros dentro da capital.</div></div>
+<div class="panel"><div class="panel-title"><div><p class="eyebrow">QUATRO RECORTES, MESMA DIREÇÃO</p><h2>A ESF acompanha a detecção em gestante, não a taxa de sífilis congênita</h2></div><span class="pill amber">ρ de Spearman</span></div><p class="esf-sub">Correlação entre a cobertura estimada de ESF e cada indicador. Em destaque, as correlações que saem da faixa do acaso (5%). A última coluna é a correlação parcial com a taxa de sífilis congênita, mantida igual a detecção em gestante.</p><div class="table-wrap esf-tabela" id="gsp-correl"></div><div class="chart-context">Um estudo com os municípios do país chega à mesma direção: Ramos-Silva e colaboradores (<a href="https://doi.org/10.1007/s10995-026-04329-1" target="_blank" rel="noopener">Maternal and Child Health Journal, 2026 ↗</a>) relatam, no resumo, que cada equipe de ESF a mais por 10 mil habitantes se associa a menos sífilis congênita só depois de descontada a carga de sífilis em gestante, com resultado sensível ao modelo. São comparações entre territórios: não medem o efeito da ESF sobre cada gestante.</div></div>
+<div class="panel"><div class="panel-title"><div><p class="eyebrow">MUNICÍPIO POR MUNICÍPIO</p><h2>Equipes de ESF no CNES e taxa de sífilis congênita</h2></div><span class="pill amber">Pergunta em aberto</span></div><div class="gsp-escolha"><div class="esf-escolha"><label for="gsp-mun">Município da Grande SP<select id="gsp-mun" aria-label="Município da Grande SP"></select></label></div><div class="gsp-controles" id="gsp-atalhos"><div role="group" aria-label="Atalhos"><button type="button" data-cod="351060">Carapicuíba</button><button type="button" data-cod="353440">Osasco</button><button type="button" data-cod="350570">Barueri</button><button type="button" data-cod="352940">Mauá</button><button type="button" data-cod="350920">Cajamar</button><button type="button" data-cod="355030">São Paulo</button></div></div></div><p class="esf-sub" id="gsp-mun-resumo"></p><div class="esf-grid gsp-par"><div class="chart-panel"><h3>Equipes eSF ativas no CNES</h3><div id="gsp-mun-eq" class="chart"></div></div><div class="chart-panel"><h3>Sífilis congênita por 1.000 nascidos vivos</h3><div id="gsp-mun-sc" class="chart"></div><div class="series-notes esf-legenda" id="gsp-mun-legenda"></div></div></div><div class="chart-context"><strong>Carapicuíba e Osasco têm as maiores taxas de sífilis congênita da Grande SP e estão entre os cinco municípios com queda de equipes no CNES.</strong> Barueri está no mesmo grupo: desde 2017 quase não tem equipe eSF registrada, tem 97 equipes eAP em 2026 e uma das menores taxas. Não foi verificado se as equipes deixaram de existir ou se foi falha de cadastro. Para saber: histórico de cobertura da atenção básica no e-Gestor AB e consulta às secretarias municipais.</div></div>
+<div class="panel"><div class="panel-title"><div><p class="eyebrow">OS 39 MUNICÍPIOS DA GRANDE SP</p><h2>Cobertura de ESF, detecção em gestante e sífilis congênita</h2></div></div><p class="esf-sub">Clique no título de uma coluna para ordenar. Taxas por 1.000 nascidos vivos, somando os três anos; cobertura estimada de ESF em dezembro, média do período. Em cinza, municípios com menos de 1.000 nascidos vivos por ano, em que poucos casos mudam muito a taxa.</p><div class="table-wrap esf-tabela" id="gsp-tabela"></div></div>
+<div class="panel prose"><h2>Como os números foram feitos</h2><ul><li><strong>Sífilis:</strong> planilha do painel de indicadores do Ministério da Saúde (DATHI), com corte em 30/06/2024, por município de residência e ano de diagnóstico; sífilis congênita em menores de 1 ano. A série termina em 2023 porque 2024 está parcial nessa fonte. Os totais da capital são de 3% a 8% maiores que os do boletim da SMS-SP em 2022 e 2023.</li><li><strong>Vizinhos da Grande SP:</strong> soma dos 38 municípios da Região Metropolitana de São Paulo, sem a capital. Interior e litoral: os outros 606 municípios paulistas.</li><li><strong>Cobertura estimada de ESF:</strong> equipes eSF ativas no CNES × 3.450 pessoas ÷ população, limitada a 100%, com os mesmos tipos de equipe e a mesma regra da tela “ESF por STS”. População dos Censos 2010 e 2022, interpolada entre os dois e mantida depois de 2022. Nos períodos de três anos, as equipes e a população de dezembro de cada ano foram somadas.</li><li><strong>Correlações:</strong> ρ de Spearman entre municípios com pelo menos 1.000 nascidos vivos por ano em 2015–17 e em 2021–23. A linha das STS repete a análise de 12/11/2026 com o Boletim de Sífilis 2026 da SMS-SP.</li><li><strong>Limites:</strong> comparação entre territórios, sem ajuste por renda ou vulnerabilidade. Mais ESF também pode significar mais testagem e notificação. O cadastro de equipes no CNES tem falhas: em cinco vizinhos da capital as equipes somem e voltam, e o total do estado salta em 2020. Não há 2024 nem 2025 por município nesta fonte; para isso, microdados do SINAN no DATASUS ou o TabNet da SES-SP.</li></ul></div></section>
+<section id="fontes" class="page" hidden><div class="section-head"><div><p class="eyebrow">06 / FONTES DE DADOS</p><h1>Um mapa para<br>construir a pesquisa.</h1><p class="intro">Fontes públicas, acessos sob solicitação e parcerias possíveis. Mapeado não significa baixado.</p></div></div><div class="catalog-controls"><label class="search" for="search">Buscar fonte, tema ou instituição<input type="search" aria-label="Buscar fonte, tema ou instituição" id="search" placeholder="Ex.: SINAN, raça, laboratório…"></label><label for="group">Grupo<select aria-label="Grupo" id="group"><option value="">Todos os grupos</option></select></label><label for="status">Situação<select aria-label="Situação" id="status"><option value="">Todas</option><option value="real">Dados incorporados</option><option value="planned">Ainda no plano</option></select></label></div><p class="result-count" id="result-count"></p><div id="catalog" class="catalog"></div><div class="panel prose" id="inconsistencias-boletim-2026"><p class="eyebrow">CONFERÊNCIA DE 12 NOV 2026</p><h2>Inconsistências do Boletim de Sífilis 2026 da SMS-SP</h2><p>O boletim municipal de outubro de 2026 foi conferido por dentro e contra a série mensal da SMS-SP, o boletim municipal de 2025, os microdados do SINAN e o boletim federal de outubro de 2026. As tabelas 5 e 9, usadas na tela “ESF por STS”, são consistentes. Os problemas estão em pontos isolados.</p>
 <h3>Erros dentro do boletim</h3><ul>
 <li><strong>Taxa municipal de sífilis congênita de 2020 publicada como 0,0</strong> na tabela 9, com 1.061 casos. O valor do boletim de 2025 e da série da SMS-SP é 7,2. Neste site, a taxa fica em branco no Panorama e recalculada (7,2) na tela “ESF por STS”.</li>
 <li><strong>Percentuais da tabela 7</strong> (trimestre do diagnóstico da gestante por STS) não correspondem às contagens. Cidade Tiradentes tem 365 de 421 gestantes diagnosticadas no 1º trimestre (87%), e a tabela mostra 29,9%. As contagens fecham com o total; use só elas.</li>
@@ -56,4 +401,4 @@
 <h3>Comparação com as bases federais</h3><ul>
 <li><strong>Microdados do SINAN (DATASUS):</strong> na capital, têm de 3% a 8% a mais de registros que o boletim (764 contra 728 em 2024), porque são registros brutos, sem retirar descartados e duplicidades.</li>
 <li><strong>Boletim federal de outubro de 2026:</strong> com o SINAN atualizado em 30/06/2026, traz 4.042 casos de sífilis congênita no Estado em 2025. O arquivo público do DATASUS tem 2.006 para o mesmo ano, porque só cobre janeiro a junho. A diferença está no arquivo público, não no boletim municipal. O valor da capital no boletim federal só aparece em gráfico e não foi comparado.</li></ul></div></section>
-<footer><span>Iniciação Científica · Sífilis Congênita · Feito por <strong>Marjori Pomarole</strong></span><span class="autoria-links" id="autoria-links"><a href="https://github.com/marjoripomarole" target="_blank" rel="noopener">GitHub ↗</a> · <a href="https://github.com/marjoripomarole/sifilis-sp-caderno-pesquisa" target="_blank" rel="noopener">Código do site ↗</a></span><span>Fontes públicas. Interpretação em construção.</span></footer><div id="meeting-nav" hidden><button id="prev-page" aria-label="Tela anterior">← Anterior</button><span id="page-count">1 / 3</span><button id="next-page">Próxima →</button></div></main></body></html>
+<footer><span>Iniciação Científica · Sífilis Congênita · Feito por <strong>Marjori Pomarole</strong></span><span class="autoria-links" id="autoria-links"><a href="https://github.com/marjoripomarole" target="_blank" rel="noopener">GitHub ↗</a> · <a href="https://github.com/marjoripomarole/sifilis-sp-caderno-pesquisa" target="_blank" rel="noopener">Código do site ↗</a></span><span>Fontes públicas. Interpretação em construção.</span></footer><div id="meeting-nav" hidden><button id="prev-page" aria-label="Tela anterior">← Anterior</button><span id="page-count">1 / 6</span><button id="next-page">Próxima →</button></div></main></body></html>
