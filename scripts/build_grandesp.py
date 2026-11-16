@@ -1,7 +1,8 @@
 """Gera dist/grande-sp.json: capital × 38 vizinhos da Grande SP × restante do estado.
 
 Lê os CSV de `Painel municipal DATHI — triagem de municípios — 16 nov 2026/` (painel do
-Ministério da Saúde, corte 30/06/2024, e cobertura de ESF pelo CNES) e o esf-sts.json do site.
+Ministério da Saúde, corte 30/06/2024, até 2023; microdados do SINAN e SINASC em 2024; cobertura
+de ESF pelo CNES; relatório do e-Gestor de cinco municípios) e o esf-sts.json do site.
 
 Uso: python3 -I build_grandesp.py <pasta_triagem> <dist/esf-sts.json> <dist/grande-sp.json>
 """
@@ -146,6 +147,31 @@ for g, cods in SUB.items():
         esf = sum(C[c][comp]['esf'] for c in cods); pop = sum(C[c][comp]['pop'] for c in cods)
         cob_sub.append({'grupo': g, 'competencia': comp, 'equipes_esf': round(esf), 'cobertura': r1(min(100, 100 * esf * 3450 / pop))})
 
+# 2024: microdados do SINAN (coleta de 24/09/2026) e nascidos vivos do SINASC
+num = lambda v: float(v) if v not in ('', None) else None
+G24 = {r['grupo']: r for r in ler('grupos_sinan_2023_2025.csv') if r['periodo'] == '2024'}
+M24 = {r['cod']: r for r in ler('municipios_sp_sinan_2023_2025.csv') if r['periodo'] == '2024'}
+def linha24(g, r):
+    return {'grupo': g, 'ano': 2024, 'nv': int(r['nascidos_vivos']), 'casos_gestante': int(r['casos_gestante']), 'casos_sc': int(r['casos_sc']),
+            'deteccao': num(r['deteccao_gestante_1000nv']), 'incidencia_sc': num(r['incidencia_sc_1000nv']),
+            'sc_por_100_gestantes': num(r['sc_por_100_gestantes']), 'pct_prenatal': num(r['pct_maes_sc_com_prenatal']),
+            'pct_gestante_1o_trimestre': num(r['pct_gestante_1o_trimestre']), 'pct_dx_prenatal': num(r['pct_maes_sc_dx_no_prenatal']),
+            'pct_sem_tratamento': num(r['pct_maes_sc_sem_tratamento']), 'fonte': 'sinan'}
+for g in GRUPOS:
+    serie_grupos.append(linha24(g, G24[g]))
+for g in SUB:
+    l = linha24(g, G24[g]); serie_sub.append({k: l[k] for k in ('grupo', 'ano', 'casos_sc', 'incidencia_sc', 'deteccao')})
+for c, s_ in series.items():
+    r = M24[c]
+    s_['sc'].append([2024, num(r['incidencia_sc_1000nv']), int(r['casos_sc'])]); s_['deteccao'].append([2024, num(r['deteccao_gestante_1000nv'])])
+for m in municipios:
+    r = M24[m['cod']]
+    m['incidencia_sc_2024'] = num(r['incidencia_sc_1000nv']); m['casos_sc_2024'] = int(r['casos_sc']); m['deteccao_2024'] = num(r['deteccao_gestante_1000nv'])
+    m['equipes_esf_2024'] = round(C[m['cod']]['2024-12']['esf'])
+egestor = [{'competencia': r['competencia'], 'municipio': r['municipio'], 'n_esf': int(r['n_esf']),
+            'cobertura_ab': float(r['cobertura_ab_pct']), 'cobertura_esf': float(r['cobertura_esf_pct'])}
+           for r in ler('egestor_cobertura_ab_cinco_municipios_2014_2020.csv')]
+
 # Correlações de Spearman
 def postos(x):
     o = sorted(range(len(x)), key=lambda i: x[i])
@@ -203,12 +229,14 @@ json.dump({
     'gerado_em': '2026-11-16',
     'fontes': {
         'sifilis': 'Painel de indicadores de sífilis do Ministério da Saúde (DATHI), planilha painelSifilis.xlsx, corte de 30/06/2024',
+        'sifilis_2024': 'Microdados do SINAN (DATASUS, coleta de 24/09/2026) e nascidos vivos do SINASC 2024',
+        'egestor': 'e-Gestor APS, relatório Cobertura da Atenção Básica (2007–2020), consultado em 16/11/2026',
         'equipes': 'CNES/DATASUS, arquivos EPSP de dezembro de 2014 a setembro de 2026',
         'populacao': 'IBGE, Censos 2010 e 2022 (tabela 9605)',
     },
     'grupos': serie_grupos, 'cobertura_grupos': cob_grupos, 'municipios': municipios,
     'series': series, 'correlacoes': correl, 'equipes_estado': estado,
-    'queda_cnes': [{'cod': c, 'nome': nome[c]} for c in sorted(queda, key=lambda c: nome[c])], 'subgrupos': serie_sub, 'cobertura_subgrupos': cob_sub,
+    'queda_cnes': [{'cod': c, 'nome': nome[c]} for c in sorted(queda, key=lambda c: nome[c])], 'subgrupos': serie_sub, 'cobertura_subgrupos': cob_sub, 'egestor': egestor,
 }, open(SAIDA, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
 
 print('municípios:', len(municipios), '| Grande SP:', sum(m['grande_sp'] for m in municipios), '| ≥1.000 NV:', sum(m['mil_nv'] for m in municipios))
@@ -222,3 +250,4 @@ print(os.path.getsize(SAIDA), 'bytes')
 print('queda no CNES:', [nome[c] for c in queda])
 print([(x['grupo'][:6], x['competencia'], x['equipes_esf'], x['cobertura']) for x in cob_sub if x['competencia'] in ('2015-12', '2019-12', '2023-12')])
 print([(x['grupo'][:6], x['ano'], x['incidencia_sc']) for x in serie_sub if x['ano'] in (2015, 2019, 2022, 2023)])
+print('2024:', [(x['grupo'][:8], x['incidencia_sc'], x['deteccao']) for x in serie_grupos if x['ano'] == 2024], [(x['grupo'][:8], x['incidencia_sc']) for x in serie_sub if x['ano'] == 2024])

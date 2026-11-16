@@ -165,3 +165,6 @@
 .gsp-par h3{font-size:15px;margin:14px 0 0}
 .gsp-par .chart{margin-top:8px}
 #gsp-cascata,#gsp-correl{max-height:none}
+#gsp-egestor{max-height:none}
+#grandesp td.gsp-zero{color:#b3261e}
+.gsp-h3{font-size:16px;margin:22px 0 6px}

@@ -20,6 +20,7 @@ Código em https://github.com/marjoripomarole/sifilis-sp-caderno-pesquisa. Até 
 - Nova aba **05 Capital × Grande SP (`#grandesp`)**, em `dist/grandesp.js` e `dist/grande-sp.json`: capital comparada com os 38 vizinhos da Região Metropolitana e com o restante do estado. Sífilis congênita e em gestante de 2013 a 2023 (painel do Ministério da Saúde, corte 30/06/2024) e cobertura estimada de ESF de dezembro de 2014 a setembro de 2026 (CNES e Censos), com dispersão por município, correlações de Spearman em quatro recortes e série de equipes eSF de cada município.
 - `scripts/build_grandesp.py` gera o `grande-sp.json` a partir dos CSV de `../Painel municipal DATHI — triagem de municípios — 16 nov 2026/`: `python3 -I scripts/build_grandesp.py "<pasta da triagem>" dist/esf-sts.json dist/grande-sp.json`.
 - “Fontes de dados” passou a ser a aba 06.
+- Na mesma tarde a aba ganhou **2024** (casos dos microdados do SINAN, coleta de 24/09/2026, e nascidos vivos do SINASC 2024) e a tabela do **e-Gestor** com equipes eSF e cobertura da atenção básica de Barueri, Cajamar, Carapicuíba, Mauá e Osasco em dezembro de 2014 a 2020. O texto deixou de afirmar que as equipes desses municípios voltaram em 2020: o relatório do Ministério não confirma.
 
 ## Para publicar de novo
 

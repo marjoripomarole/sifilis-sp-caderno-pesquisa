@@ -25,13 +25,13 @@
   };
   const COLUNAS = [
     ['nome', 'Município', null], ['nv_ano', 'Nascidos vivos por ano', n0],
-    ['equipes_esf_2015', 'Equipes eSF dez/2015', n0], ['equipes_esf_2023', 'Equipes eSF dez/2023', n0],
+    ['equipes_esf_2015', 'Equipes eSF dez/2015', n0], ['equipes_esf_2024', 'Equipes eSF dez/2024', n0],
     ['cobertura_2015_17', 'Cobertura 2015–17', pct], ['cobertura_2021_23', 'Cobertura 2021–23', pct],
     ['deteccao_2021_23', 'Detecção em gestante 2021–23', n1],
     ['incidencia_sc_2015_17', 'Taxa de SC 2015–17', n1], ['incidencia_sc_2021_23', 'Taxa de SC 2021–23', n1],
-    ['casos_sc_2021_23', 'Casos de SC 2021–23', n0], ['sc_por_100_gestantes_2021_23', 'SC por 100 gestantes', n1],
+    ['incidencia_sc_2024', 'Taxa de SC 2024', n1], ['casos_sc_2024', 'Casos de SC 2024', n0], ['sc_por_100_gestantes_2021_23', 'SC por 100 gestantes 2021–23', n1],
   ];
-  let D = null, ordem = {campo: 'incidencia_sc_2021_23', desc: true}, estado = {conjunto: 'gsp', indicador: 'sc'};
+  let D = null, ordem = {campo: 'incidencia_sc_2024', desc: true}, estado = {conjunto: 'gsp', indicador: 'sc'};
 
   const grupo = (g, ano) => D.grupos.find(r => r.grupo === g && r.ano === ano) || {};
   const cobGrupo = (g, comp) => (D.cobertura_grupos.find(r => r.grupo === g && r.competencia === comp) || {}).cobertura;
@@ -77,17 +77,17 @@
   }
 
   function resumo() {
-    const c15 = grupo(CAP, 2015), v15 = grupo(VIZ, 2015), c23 = grupo(CAP, 2023), v23 = grupo(VIZ, 2023), v22 = grupo(VIZ, 2022), c22 = grupo(CAP, 2022);
+    const c15 = grupo(CAP, 2015), v15 = grupo(VIZ, 2015), c23 = grupo(CAP, 2024), v23 = grupo(VIZ, 2024);
     const cc = a => cobGrupo(CAP, a + '-12'), cv = a => cobGrupo(VIZ, a + '-12');
-    $('#gsp-metrics').innerHTML = `<article><span>Sífilis congênita · 2023</span><strong>${n1(c23.incidencia_sc)} × ${n1(v23.incidencia_sc)}</strong><small>capital × vizinhos, por 1.000 nascidos vivos · 2015: ${n1(c15.incidencia_sc)} × ${n1(v15.incidencia_sc)}</small></article>`
-      + `<article><span>Cobertura estimada de ESF · dez/2023</span><strong>${n0(Math.round(cc(2023)))}% × ${n0(Math.round(cv(2023)))}%</strong><small>dez/2015: ${pct(cc(2015))} × ${pct(cv(2015))} · dez/2019: ${pct(cc(2019))} × ${pct(cv(2019))}</small></article>`
-      + `<article><span>Detecção em gestante · 2023</span><strong>${n1(c23.deteccao)} × ${n1(v23.deteccao)}</strong><small>por 1.000 nascidos vivos · 2015: ${n1(c15.deteccao)} × ${n1(v15.deteccao)}</small></article>`
-      + `<article><span>Casos congênitos por 100 gestantes · 2023</span><strong>${n1(c23.sc_por_100_gestantes)} × ${n1(v23.sc_por_100_gestantes)}</strong><small>2015: ${n1(c15.sc_por_100_gestantes)} × ${n1(v15.sc_por_100_gestantes)}</small></article>`;
+    $('#gsp-metrics').innerHTML = `<article><span>Sífilis congênita · 2024</span><strong>${n1(c23.incidencia_sc)} × ${n1(v23.incidencia_sc)}</strong><small>capital × vizinhos, por 1.000 nascidos vivos · 2015: ${n1(c15.incidencia_sc)} × ${n1(v15.incidencia_sc)}</small></article>`
+      + `<article><span>Cobertura estimada de ESF · dez/2024</span><strong>${n0(Math.round(cc(2024)))}% × ${n0(Math.round(cv(2024)))}%</strong><small>dez/2015: ${pct(cc(2015))} × ${pct(cv(2015))} · dez/2019: ${pct(cc(2019))} × ${pct(cv(2019))}</small></article>`
+      + `<article><span>Detecção em gestante · 2024</span><strong>${n1(c23.deteccao)} × ${n1(v23.deteccao)}</strong><small>por 1.000 nascidos vivos · 2015: ${n1(c15.deteccao)} × ${n1(v15.deteccao)}</small></article>`
+      + `<article><span>Casos congênitos por 100 gestantes · 2024</span><strong>${n1(c23.sc_por_100_gestantes)} × ${n1(v23.sc_por_100_gestantes)}</strong><small>2015: ${n1(c15.sc_por_100_gestantes)} × ${n1(v15.sc_por_100_gestantes)}</small></article>`;
     const Q = 'Vizinhos com queda no CNES', O = 'Outros vizinhos';
     const sub = (g, ano) => D.subgrupos.find(r => r.grupo === g && r.ano === ano) || {};
     const cs = (g, comp) => (D.cobertura_subgrupos.find(r => r.grupo === g && r.competencia === comp) || {}).cobertura;
     const nq = D.queda_cnes.length, no = 38 - nq;
-    $('#gsp-achado').innerHTML = `<strong>Leitura</strong><p>Em 2015, a capital e os 38 municípios vizinhos tinham a mesma cobertura de ESF (${pct(cc(2015))} e ${pct(cv(2015))}) e a mesma taxa de sífilis congênita (${n1(c15.incidencia_sc)} e ${n1(v15.incidencia_sc)} por 1.000 nascidos vivos). Até 2019 a capital chega a ${pct(cc(2019))} de cobertura e os vizinhos caem para ${pct(cv(2019))}, mas a queda vem toda de ${n0(nq)} municípios em que as equipes somem do CNES. Nos outros ${n0(no)} a cobertura fica parada (${pct(cs(O, '2015-12'))} e ${pct(cs(O, '2019-12'))}) e a sífilis congênita sobe do mesmo jeito: de ${n1(sub(O, 2015).incidencia_sc)} para ${n1(sub(O, 2019).incidencia_sc)}, contra ${n1(c15.incidencia_sc)} para ${n1(grupo(CAP, 2019).incidencia_sc)} na capital. Em 2022 os vizinhos chegam a ${n1(v22.incidencia_sc)} e a capital a ${n1(c22.incidencia_sc)}. São séries agregadas: a comparação levanta a hipótese, não a testa. Município a município, a cobertura de ESF acompanha a detecção de sífilis em gestante e não a taxa de sífilis congênita.</p>`;
+    $('#gsp-achado').innerHTML = `<strong>Leitura</strong><p>Em 2015, a capital e os 38 municípios vizinhos tinham a mesma cobertura de ESF (${pct(cc(2015))} e ${pct(cv(2015))}) e a mesma taxa de sífilis congênita (${n1(c15.incidencia_sc)} e ${n1(v15.incidencia_sc)} por 1.000 nascidos vivos). Até 2019 a capital chega a ${pct(cc(2019))} de cobertura e os vizinhos caem para ${pct(cv(2019))}, mas a queda vem toda de ${n0(nq)} municípios em que as equipes somem do CNES. Nos outros ${n0(no)} a cobertura fica parada (${pct(cs(O, '2015-12'))} e ${pct(cs(O, '2019-12'))}) e a sífilis congênita sobe do mesmo jeito: de ${n1(sub(O, 2015).incidencia_sc)} para ${n1(sub(O, 2019).incidencia_sc)}, contra ${n1(c15.incidencia_sc)} para ${n1(grupo(CAP, 2019).incidencia_sc)} na capital. Em 2024 a distância aumenta: ${n1(c23.incidencia_sc)} na capital e ${n1(v23.incidencia_sc)} nos vizinhos, que somam ${n0(v23.casos_sc)} casos contra ${n0(c23.casos_sc)}. São séries agregadas: a comparação levanta a hipótese, não a testa. Município a município, a cobertura de ESF acompanha a detecção de sífilis em gestante e não a taxa de sífilis congênita.</p>`;
   }
 
   function subgrupos() {
@@ -106,22 +106,29 @@
     const cs = (g, comp) => (D.cobertura_subgrupos.find(r => r.grupo === g && r.competencia === comp) || {}).cobertura;
     const sub = (g, ano) => D.subgrupos.find(r => r.grupo === g && r.ano === ano) || {};
     const nomes = D.queda_cnes.map(m => m.nome), lista = nomes.slice(0, -1).join(', ') + ' e ' + nomes[nomes.length - 1];
-    $('#gsp-sub-texto').textContent = `Em ${lista}, as equipes eSF ativas caem pela metade ou mais no CNES entre 2016 e 2019: somadas, vão de ${n0(eq('2015-12'))} em dezembro de 2015 para ${n0(eq('2018-12'))} em 2018 e voltam a ${n0(eq('2020-12'))} em 2020. Nos outros ${n0(no)} vizinhos a cobertura fica entre ${pct(cs(O, '2015-12'))} e ${pct(cs(O, '2019-12'))}.`;
-    $('#gsp-sub-leitura').innerHTML = `<strong>Até 2019 a sífilis congênita sobe igual nos dois grupos de vizinhos</strong>, com ou sem queda de equipes no cadastro: ${n1(sub(Q, 2019).incidencia_sc)} e ${n1(sub(O, 2019).incidencia_sc)} por 1.000 nascidos vivos. A distância entre eles aparece depois de 2020 (${n1(sub(Q, 2022).incidencia_sc)} e ${n1(sub(O, 2022).incidencia_sc)} em 2022), quando as equipes já tinham voltado ao CNES. Não foi verificado se a queda foi desmonte real ou falha de cadastro.`;
+    $('#gsp-sub-texto').textContent = `Em ${lista}, as equipes eSF ativas caem pela metade ou mais no CNES entre 2016 e 2019: somadas, vão de ${n0(eq('2015-12'))} em dezembro de 2015 para ${n0(eq('2018-12'))} em dezembro de 2018. Nos outros ${n0(no)} vizinhos a cobertura fica entre ${pct(cs(O, '2015-12'))} e ${pct(cs(O, '2019-12'))}.`;
+    $('#gsp-sub-leitura').innerHTML = `<strong>Até 2019 a sífilis congênita sobe igual nos dois grupos de vizinhos</strong>, com ou sem queda de equipes no cadastro: ${n1(sub(Q, 2019).incidencia_sc)} e ${n1(sub(O, 2019).incidencia_sc)} por 1.000 nascidos vivos. A distância entre eles aparece depois de 2020: ${n1(sub(Q, 2022).incidencia_sc)} e ${n1(sub(O, 2022).incidencia_sc)} em 2022, ${n1(sub(Q, 2024).incidencia_sc)} e ${n1(sub(O, 2024).incidencia_sc)} em 2024. A subida da linha laranja de cobertura em 2020 depende do critério: na contagem do CNES usada aqui as equipes voltam naquele ano; no relatório do Ministério, ainda não (tabela abaixo).`;
     $('#gsp-sub-legenda').innerHTML = `<span><i class="tracejado"></i>Capital</span><span><i style="background:#bd6024"></i>${esc(lista)}</span><span><i style="background:#007e70"></i>Outros ${n0(no)} vizinhos</span>`;
   }
 
   function series() {
     const sg = campo => GRUPOS.map(([g, c, rot]) => ({n: g, c, rot, fina: g === INT,
       pts: D.grupos.filter(r => r.grupo === g).map(r => ({x: r.ano, y: r[campo], quando: String(r.ano)}))}));
-    linhas('#gsp-sc', sg('incidencia_sc'), {titulo: 'Taxa de sífilis congênita de 2013 a 2023: capital, vizinhos da Grande SP e interior'});
-    linhas('#gsp-det', sg('deteccao'), {titulo: 'Detecção de sífilis em gestante de 2013 a 2023: capital, vizinhos da Grande SP e interior'});
+    linhas('#gsp-sc', sg('incidencia_sc'), {titulo: 'Taxa de sífilis congênita de 2013 a 2024: capital, vizinhos da Grande SP e interior'});
+    linhas('#gsp-det', sg('deteccao'), {titulo: 'Detecção de sífilis em gestante de 2013 a 2024: capital, vizinhos da Grande SP e interior'});
     linhas('#gsp-cob', GRUPOS.map(([g, c, rot]) => ({n: g, c, rot, fina: g === INT,
       pts: D.cobertura_grupos.filter(r => r.grupo === g).map(r => ({x: xComp(r.competencia), y: r.cobertura, quando: quando(r.competencia), extra: n0(r.equipes_esf) + ' equipes'}))})),
       {titulo: 'Cobertura estimada de ESF de dezembro de 2014 a setembro de 2026: capital, vizinhos da Grande SP e interior', top: 80, passo: 20, sufixo: '%', fmt: pct,
         faixa: [xComp('2019-12'), xComp('2020-12'), 'cadastro']});
     const e = D.equipes_estado;
     $('#gsp-salto').textContent = `Entre dezembro de 2019 e dezembro de 2020, as equipes eSF registradas no estado passam de ${n0(e['2019-12'].esf)} para ${n0(e['2020-12'].esf)} e as eAP de ${n0(e['2019-12'].eap)} para ${n0(e['2020-12'].eap)}.`;
+  }
+
+  function egestor() {
+    const anos = [...new Set(D.egestor.map(r => r.competencia))].sort();
+    const nomes = [...new Set(D.egestor.map(r => r.municipio))];
+    const cel = (m, c) => { const r = D.egestor.find(x => x.municipio === m && x.competencia === c); return r ? `<td class="value${r.n_esf === 0 ? ' gsp-zero' : ''}"><strong>${n0(r.n_esf)}</strong> · ${n0(Math.round(r.cobertura_ab))}%</td>` : '<td class="value">—</td>'; };
+    $('#gsp-egestor').innerHTML = `<table><thead><tr><th scope="col">Dezembro de</th>${anos.map(c => `<th scope="col" class="num">${esc(c.slice(0, 4))}</th>`).join('')}</tr></thead><tbody>${nomes.map(m => `<tr><td>${esc(m)}</td>${anos.map(c => cel(m, c)).join('')}</tr>`).join('')}</tbody></table>`;
   }
 
   function cascata() {
@@ -132,8 +139,8 @@
       ['pct_sem_tratamento', 'Casos congênitos: mãe não tratada', pct],
       ['sc_por_100_gestantes', 'Casos congênitos por 100 gestantes notificadas', n1],
       ['incidencia_sc', 'Sífilis congênita por 1.000 nascidos vivos', n1]];
-    $('#gsp-cascata').innerHTML = `<table><thead><tr><th scope="col">2023</th>${GRUPOS.map(([g]) => `<th scope="col" class="num">${esc(g)}</th>`).join('')}</tr></thead><tbody>${L.map(([k, t, f]) =>
-      `<tr><td>${esc(t)}</td>${GRUPOS.map(([g]) => `<td class="value">${esc(f(grupo(g, 2023)[k]))}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+    $('#gsp-cascata').innerHTML = `<table><thead><tr><th scope="col">2024</th>${GRUPOS.map(([g]) => `<th scope="col" class="num">${esc(g)}</th>`).join('')}</tr></thead><tbody>${L.map(([k, t, f]) =>
+      `<tr><td>${esc(t)}</td>${GRUPOS.map(([g]) => `<td class="value">${esc(f(grupo(g, 2024)[k]))}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
   }
 
   function dispersao() {
@@ -204,11 +211,11 @@
     barras('#gsp-mun-eq', s.equipes, cor, `Equipes de Saúde da Família de ${m.nome} no CNES, de dezembro de 2014 a setembro de 2026`);
     const serie = (nome, c, d, extra) => ({n: nome, c, ...extra, pts: d.sc.map(([ano, taxa, casos]) => ({x: ano, y: taxa, quando: String(ano), extra: n0(casos) + ' casos'}))});
     linhas('#gsp-mun-sc', ehCap ? [serie(m.nome, cor, s)] : [serie(m.nome, cor, s), serie('São Paulo (capital)', '#10253e', cap, {tracejado: true, fina: true})],
-      {titulo: `Taxa de sífilis congênita de ${m.nome} e da capital, de 2013 a 2023`, rotulo: false});
+      {titulo: `Taxa de sífilis congênita de ${m.nome} e da capital, de 2013 a 2024`, rotulo: false});
     $('#gsp-mun-legenda').innerHTML = `<span><i style="background:${cor}"></i>${esc(m.nome)}</span>${ehCap ? '' : '<span><i class="tracejado"></i>São Paulo (capital)</span>'}`;
     const zeros = s.equipes.filter(e => e[1] === 0 && e[0] > '2014-12').map(e => e[0].slice(0, 4));
     const min = s.equipes.filter(e => e[0] >= '2015-12' && e[0] <= '2019-12').reduce((a, e) => (e[1] < a[1] ? e : a));
-    $('#gsp-mun-resumo').innerHTML = `<strong>${esc(m.nome)}</strong> · ${n0(m.nv_ano)} nascidos vivos por ano · equipes eSF no CNES: ${n0(m.equipes_esf_2015)} em dez/2015, ${n0(min[1])} em ${esc(quando(min[0]))}, ${n0(m.equipes_esf_2023)} em dez/2023 · taxa de sífilis congênita: ${esc(n1(m.incidencia_sc_2015_17))} em 2015–17 e ${esc(n1(m.incidencia_sc_2021_23))} em 2021–23${zeros.length ? ` · sem nenhuma equipe eSF registrada em ${esc(zeros.join(', '))}` : ''}${m.mil_nv ? '' : ' · menos de 1.000 nascidos vivos por ano: a taxa oscila muito de um ano para o outro'}`;
+    $('#gsp-mun-resumo').innerHTML = `<strong>${esc(m.nome)}</strong> · ${n0(m.nv_ano)} nascidos vivos por ano · equipes eSF no CNES: ${n0(m.equipes_esf_2015)} em dez/2015, ${n0(min[1])} em ${esc(quando(min[0]))}, ${n0(m.equipes_esf_2024)} em dez/2024 · taxa de sífilis congênita: ${esc(n1(m.incidencia_sc_2015_17))} em 2015–17, ${esc(n1(m.incidencia_sc_2021_23))} em 2021–23 e ${esc(n1(m.incidencia_sc_2024))} em 2024 (${n0(m.casos_sc_2024)} casos)${zeros.length ? ` · sem nenhuma equipe eSF registrada em ${esc(zeros.join(', '))}` : ''}${m.mil_nv ? '' : ' · menos de 1.000 nascidos vivos por ano: a taxa oscila muito de um ano para o outro'}`;
   }
 
   function tabela() {
@@ -229,7 +236,7 @@
 
   fetch('grande-sp.json', {cache: 'no-store'}).then(r => { if (!r.ok) throw new Error('Dados indisponíveis'); return r.json(); }).then(d => {
     D = d;
-    resumo(); series(); subgrupos(); cascata(); dispersao(); correlacoes(); municipio(); tabela();
+    resumo(); series(); subgrupos(); egestor(); cascata(); dispersao(); correlacoes(); municipio(); tabela();
     $$('#gsp-controles button').forEach(b => b.addEventListener('click', () => { estado[b.dataset.tipo] = b.dataset.valor; dispersao(); }));
   }).catch(() => {
     $('#gsp-achado').innerHTML = '<strong>Falha</strong><p>Não foi possível carregar os dados desta tela. Recarregue a página.</p>';
